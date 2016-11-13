@@ -10,13 +10,14 @@ I think those data are released in the public domain or through a common creativ
 
 ## Synopsis
 
-
+Import a public dataset from Amsterdam into elasticsearch accessible through localhost:9200.
+You can use the VM configured in [vagrant-elasticsearch](https://github.com/Esme-Sudria-Database/vagrant-elasticsearch)
 
 ## The latest version
 
 You can find the latest version to ...
 
-    git clone ...
+    git clone https://github.com/Esme-Sudria-Database/dojo_elasticsearch.git
 
 ## Usage
 
