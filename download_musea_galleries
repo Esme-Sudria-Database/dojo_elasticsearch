@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import logging
+
+SCRIPT_DIR = os.path.realpath(os.path.join(__file__, '..'))
+ROOT_DIR = os.path.realpath(os.path.join(SCRIPT_DIR, '..'))
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('command')
+
+
+def main(arguments):
+  os.chdir(ROOT_DIR)
+  _system('http://open.datapunt.amsterdam.nl/MuseaGalleries.json')
+
+# BOILERPLATE TO REPRODUCE -ex behavior of bash
+
+def _system(cmd, logged = True):
+  if logged:
+    print('$ {0}'.format(cmd))
+
+  output = os.system(cmd)
+
+  # see : https://stackoverflow.com/a/6466753
+  error_code = output >> 8
+  if error_code > 0:
+    raise OSError(error_code)
+
+if __name__ == '__main__':
+  try:
+    main(sys.argv[1:])
+  except (OSError) as e:
+    logger.critical(e)
+    sys.exit(e.args[0])

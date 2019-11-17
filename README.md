@@ -25,13 +25,13 @@ You can import the dataset in elasticsearch in the index ``musea_galeries``.
 
 ```bash
 $ source venv/bin/activate
-(venv) $ fab import_es_musea_galleries
+(venv) $ ./import_es_musea_galleries
 ```
 If the dataset is out of date, you can redownload it :
 
 ```bash
 $ source venv/bin/activate
-(venv) $ fab download_musea_galleries
+(venv) $ ./download_musea_galleries
 ```
 
 ## Installation
